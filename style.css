@@ -1,0 +1,422 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "top-menu top-menu top-menu top-menu top-menu" 50px
+    ". . hiring . ." auto
+    ". aboutme ." auto
+    ". . portfolio-title . ." auto
+    " . alpha beta theta ." auto
+    ". . experience . ." /
+    1fr 1fr 1fr 1fr 1fr;
+  height: 100vh;
+  width: 100vh;
+  content: center;
+  align-content: center;
+  text-align: center;
+  border: 4px solid black;
+}
+.top-menu {
+  grid-area: top-menu;
+  display: grid;
+  grid-template:
+    "headername . aboutmelink portfoliolink experiencelink" 50px /
+    20ch 1fr 15ch 15ch 15ch;
+  background-color: #3bbfb4;
+  text-align: center;
+  text-justify: center;
+}
+.headername {
+  grid-area: headername;
+  color: white;
+  place-items: center;
+  padding-top: 10px;
+}
+.aboutmelink {
+  grid-area: aboutmelink;
+}
+.portfoliolink {
+  grid-area: portfoliolink;
+}
+.experiencelink {
+  grid-area: experiencelink;
+}
+.aboutmelink,
+.portfoliolink,
+.experiencelink {
+  background-color: white;
+  color: #3bbfb4;
+  font-size: 1.11rem;
+  border-radius: 5px;
+  place-items: center;
+  margin: 10px;
+  padding-top: 4px;
+}
+header a:visited,
+header a:active,
+header a:link {
+  color: #3bbfb4;
+  text-decoration: none;
+}
+/* Section Hiring ***************************************** */
+.hiring {
+  grid-area: hiring;
+  display: grid;
+  grid-template:
+    ". hiring-h1 ." 18rem
+    ". hiring-p  ." 150px/
+    1fr 50ch 1fr;
+  background-color: #3bbfb4;
+}
+
+.hiring-h1 {
+  grid-area: hiring-h1;
+
+  padding-top: 50px;
+  text-align: left;
+  font-size: 3rem;
+  width: 10ch;
+  color: white;
+  background-color: #3bbfb4;
+}
+.hiring-p {
+  grid-area: hiring-p;
+  display: grid;
+  text-align: center;
+  text-align: justify;
+  width: 55ch;
+  color: white;
+  display: inline-block;
+}
+.hiring-p span {
+  font-weight: bold;
+  display: inline-block;
+}
+/* ABOUT ME ***************************************** */
+.aboutme {
+  grid-area: aboutme;
+  display: grid;
+  grid-template:
+    ". aboutme-h1 ." auto
+    ". introduction  ." auto
+    ". intro-text ." auto
+    ". tech-skills ." auto
+    ". skillset ." auto/
+    1fr 1fr 1fr;
+  border: 4px solid black;
+}
+.aboutme h1 {
+  grid-area: aboutme-h1;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+  /*  padding-left: 10ch; */
+}
+.introduction {
+  grid-area: introduction;
+  font-weight: bold;
+  padding-bottom: 1ch;
+}
+.tech-skills {
+  grid-area: tech-skills;
+  font-weight: bold;
+  padding-bottom: 1ch;
+  padding-top: 3ch;
+}
+
+.intro-text {
+  grid-area: intro-text;
+  display: inline-block;
+  text-align: center;
+  text-align: justify;
+  width: 55ch;
+}
+.skillset {
+  grid-area: skillset;
+  display: grid;
+  grid-template:
+    ". skillset1 skillset2 ." auto
+    /
+    1fr 1fr 1fr 1fr;
+  padding-bottom: 5ch;
+}
+
+.skillset1 {
+  grid-area: skillset1;
+  margin-left: 5ch;
+  width: 14ch;
+}
+.skillset2 {
+  grid-area: skillset2;
+  margin-left: 10ch;
+}
+
+/* PORTFOLIO ***************************************** */
+.portfolio {
+  /*
+  grid-area: portfolio;
+  display: grid;
+  grid-template:
+    "alpha beta theta" auto/
+    1fr 1fr 1fr; */
+
+  background-color: #f7e5e8;
+  content: center;
+  align-content: center;
+  padding-bottom: 5ch;
+  border: 4px solid black;
+}
+.portfolio h1 {
+  grid-area: portfolio-title;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+}
+/* PORTFOLIO ALPHA***************************************** */
+.alpha {
+  grid-area: alpha;
+  display: grid;
+  grid-template:
+    "alpha-header" auto
+    "alpha-p" auto
+    "alpha-cv" auto
+    "alpha-github" auto/
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5ch;
+  margin-right: 3ch;
+  padding-bottom: 4ch;
+}
+
+.alpha h2 {
+  grid-area: alpha-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.alpha p {
+  grid-area: alpha-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.alpha .cv {
+  grid-area: alpha-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.alpha .github {
+  grid-area: alpha-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-bottom: 6ch;
+}
+/* PORTFOLIO BETA **************************************** */
+.beta {
+  grid-area: beta;
+  display: grid;
+  grid-template:
+    "beta-header" auto
+    "beta-p" auto
+    "beta-cv" auto
+    "beta-github" auto/
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 3ch;
+  margin-right: 3ch;
+  padding-bottom: 4ch;
+}
+
+.beta h2 {
+  grid-area: beta-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.beta p {
+  grid-area: beta-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.beta .cv {
+  grid-area: beta-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.beta .github {
+  grid-area: beta-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding-bottom: 3ch;
+}
+/* PORTFOLIO THETA***************************************** */
+.theta {
+  grid-area: theta;
+  display: grid;
+  grid-template:
+    "theta-header" auto
+    "theta-p" auto
+    "theta-cv" auto
+    "theta-github" auto/
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 3ch;
+  padding-bottom: 4ch;
+}
+
+.theta h2 {
+  grid-area: theta-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.theta p {
+  grid-area: theta-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.theta .cv {
+  grid-area: theta-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.theta .github {
+  grid-area: theta-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding-bottom: 3ch;
+}
+/* EXPERIENCE ***************************************** */
+.experience {
+  grid-area: experience;
+  display: grid;
+  grid-template:
+    ". experience-h1 ." auto
+    ". job-title1 ." auto
+    ". job-description1 ." auto
+    ". job-title2 ." auto
+    ". job-description2 ." auto/
+    1fr 1fr 1fr;
+  border: 4px solid black;
+}
+.experience h1 {
+  grid-area: experience-h1;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+}
+.job-title1 {
+  grid-area: job-title1;
+}
+.job-title2 {
+  grid-area: job-title2;
+}
+
+.job-title1,
+.job-title2 {
+  font-weight: bold;
+  padding-bottom: 1ch;
+}
+
+.job-description1 {
+  grid-area: job-description1;
+}
+.job-description2 {
+  grid-area: job-description2;
+}
+.job-description1,
+.job-description2 {
+  display: inline-block;
+  text-align: center;
+  text-align: justify;
+  width: 55ch;
+  padding-bottom: 2ch;
+}
+footer {
+  background-color: black;
+  color: white;
+}
